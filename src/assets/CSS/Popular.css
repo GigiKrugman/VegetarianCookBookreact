@@ -1,0 +1,5 @@
+.card--recipe {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2;
+}
