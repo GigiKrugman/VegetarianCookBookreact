@@ -1,5 +1,31 @@
-.card--recipe {
+.card--receipes--container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 4rem auto;
+}
+
+.card--receipes {
   display: flex;
   flex-direction: column;
-  grid-column: 2;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card--receipes img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card--receipes h4 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  color: rgb(20, 131, 20);
 }

@@ -2,15 +2,17 @@
 
 import React from "react";
 import Navbar from "./Navbar";
-import Popular from "./Popular";
-import VegetarianPopulars from "./VegetarianPopulars";
+
+import SearchBar from "./SearchBar";
+//following a tryout component to check if i can manage to try an axios call!
+import PopularVegetarians from "./PopularVegetarians";
 
 export default function Pages() {
   return (
     <>
       <Navbar />
-      <Popular />
-      <VegetarianPopulars />
+      <SearchBar />
+      <PopularVegetarians />
     </>
   );
 }

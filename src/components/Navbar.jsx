@@ -1,5 +1,15 @@
+import { BrowserRouter } from "react-router-dom";
+
 const Navbar = () => {
-  return <h3>This is a Navbar!</h3>;
+  return (
+    <div className="navbar">
+      Vegetarianify!
+      <div className="navbar--router--links">
+        <p>About</p>
+        <p>FAQ</p>
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;
