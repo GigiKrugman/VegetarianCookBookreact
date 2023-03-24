@@ -1,8 +1,0 @@
-.navbar {
-  padding: 0;
-  font-size: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background: linear-gradient(to right, #166138, #23904f);
-}
