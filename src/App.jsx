@@ -5,12 +5,15 @@ import "./index.css";
 //import { BrowserRouter } from "react-router-dom";
 // import SearchBar from "./assets/CSS/SearchBar.css";
 // import Navbar from "./assets/CSS/Navbar.css";
-import Home from "./pages/Home";
+import Pages from "./pages/Pages";
+import { BrowserRouter } from "react-router-dom";
+import SearchBar from "./components/SearchBar";
 function App() {
   return (
-    <>
-      <Home />
-    </>
+    <BrowserRouter>
+      <SearchBar />
+      <Pages />
+    </BrowserRouter>
   );
 }
 
