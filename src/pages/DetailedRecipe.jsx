@@ -2,6 +2,13 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { useParams } from "react-router-dom";
 
+//function helpful tp clear all the HTML rendered!
+function stripHTMLTags(text) {
+  const div = document.createElement("div");
+  div.innerHTML = text;
+  return div.textContent || div.innerText || "";
+}
+
 export default function DetailedRecipe() {
   const [details, setDetails] = useState();
 
@@ -25,10 +32,13 @@ export default function DetailedRecipe() {
       {details ? (
         <div key={details.id}>
           <h3>{details.title}</h3>
-          <img src={details.image} alt={details.title} />
+          <div className="card--image--info">
+            <img src={details.image} alt={details.title} />
+          </div>
+
           <div className="info--recipe">
-            <p>{details.summary}</p>
-            <p>{details.instructions}</p>
+            <p>{stripHTMLTags(details.summary)}</p>
+            <ol>{stripHTMLTags(details.instructions)} </ol>
           </div>
         </div>
       ) : (
