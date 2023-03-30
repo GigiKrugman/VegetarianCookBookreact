@@ -2,7 +2,7 @@ import React from "react";
 
 import Home from "./Home";
 import Searched from "./Searched";
-
+import DetailedRecipe from "./DetailedRecipe";
 import { Route, Routes } from "react-router-dom";
 
 export default function Pages() {
@@ -10,6 +10,7 @@ export default function Pages() {
     <Routes>
       <Route path="/" element={<Home />} index />
       <Route path="/searched/:searched" element={<Searched />} />
+      <Route path="/recipe/:id" element={<DetailedRecipe />} />
     </Routes>
   );
 }

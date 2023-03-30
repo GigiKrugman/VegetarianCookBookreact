@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import { Link } from "react-router-dom";
+import DetailedRecipe from "../pages/DetailedRecipe";
 
 export default function PopularVegetarians() {
   const [popular, setPopular] = useState([]);
@@ -47,10 +49,12 @@ export default function PopularVegetarians() {
           {popular.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-                <div className="card--receipes">
-                  <img src={recipe.image} alt={recipe.title} />
-                  <h4>{recipe.title}</h4>
-                </div>
+                <Link to={"/recipe/" + recipe.id}>
+                  <div className="card--receipes">
+                    <img src={recipe.image} alt={recipe.title} />
+                    <h4>{recipe.title}</h4>
+                  </div>
+                </Link>
               </SplideSlide>
             );
           })}
