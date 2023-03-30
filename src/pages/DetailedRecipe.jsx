@@ -12,6 +12,7 @@ export default function DetailedRecipe() {
       `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${apiKey}`
     );
     const detailData = await data.json();
+    console.log(detailData);
     setDetails(detailData);
   };
 
@@ -25,7 +26,10 @@ export default function DetailedRecipe() {
         <div key={details.id}>
           <h3>{details.title}</h3>
           <img src={details.image} alt={details.title} />
-          <div className="info--recipe"></div>
+          <div className="info--recipe">
+            <p>{details.summary}</p>
+            <p>{details.instructions}</p>
+          </div>
         </div>
       ) : (
         <p>Loading...</p>
