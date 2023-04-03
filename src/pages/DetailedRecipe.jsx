@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { useParams } from "react-router-dom";
+import { IoIosTimer } from "react-icons/io";
+import { MdFavoriteBorder } from "react-icons/md";
+import { FaNutritionix } from "react-icons/fa";
 
 //function helpful tp clear all the HTML rendered!
 function stripHTMLTags(text) {
@@ -31,14 +34,39 @@ export default function DetailedRecipe() {
     <div>
       {details ? (
         <div key={details.id}>
-          <h3>{details.title}</h3>
+          <h2 className="detail--card-title">{details.title}</h2>
           <div className="card--image--info">
-            <img src={details.image} alt={details.title} />
+            <img
+              src={details.image}
+              alt={details.title}
+              className="detail--card-image"
+            />
+            <div className="detail--card--favicons">
+              <IoIosTimer />
+              <p>Preparation time: {details.readyInMinutes} minutes</p>
+              <MdFavoriteBorder />
+              <p>Vegetarian</p>
+              <FaNutritionix />
+              <p>Nutrition Score: {details.healthScore} / 10</p>
+            </div>
           </div>
 
           <div className="info--recipe">
-            <p>{stripHTMLTags(details.summary)}</p>
-            <ol>{stripHTMLTags(details.instructions)} </ol>
+            <h3>{stripHTMLTags(details.summary)}</h3>
+            <ol>
+              {details.analyzedInstructions[0].steps.map((step) => {
+                return <li key={step.number}>{step.step}</li>;
+              })}
+            </ol>
+            <ul>
+              {details.extendedIngredients.map((ingredient) => {
+                return (
+                  <li key={ingredient.id}>
+                    <p>{ingredient.name}</p>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       ) : (
