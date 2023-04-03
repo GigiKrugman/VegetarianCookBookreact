@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { useParams } from "react-router-dom";
 import { IoIosTimer } from "react-icons/io";
-import { MdFavoriteBorder } from "react-icons/md";
+import { BiLeaf } from "react-icons/bi";
 import { FaNutritionix } from "react-icons/fa";
 
 //function helpful tp clear all the HTML rendered!
@@ -43,30 +43,44 @@ export default function DetailedRecipe() {
             />
             <div className="detail--card--favicons">
               <IoIosTimer />
-              <p>Preparation time: {details.readyInMinutes} minutes</p>
-              <MdFavoriteBorder />
-              <p>Vegetarian</p>
+              <p>
+                <span>Preparation time</span>: {details.readyInMinutes} minutes
+              </p>
+              <BiLeaf />
+              <p>
+                <span>Vegetarian</span>
+              </p>
               <FaNutritionix />
-              <p>Nutrition Score: {details.healthScore} / 10</p>
+              <p>
+                <span>Nutrition Score</span>: {details.healthScore} / 10
+              </p>
             </div>
           </div>
 
-          <div className="info--recipe">
-            <h3>{stripHTMLTags(details.summary)}</h3>
-            <ol>
-              {details.analyzedInstructions[0].steps.map((step) => {
-                return <li key={step.number}>{step.step}</li>;
-              })}
-            </ol>
+          <div className="info--recipe--container">
+            <h4 className="info--recipe--summary">
+              {stripHTMLTags(details.summary)}
+            </h4>
             <ul>
               {details.extendedIngredients.map((ingredient) => {
                 return (
-                  <li key={ingredient.id}>
-                    <p>{ingredient.name}</p>
-                  </li>
+                  <div className="info--recipe--ingredients">
+                    <li key={ingredient.id}>
+                      <p>{ingredient.name}</p>
+                    </li>
+                  </div>
                 );
               })}
             </ul>
+            <ol>
+              {details.analyzedInstructions[0].steps.map((step) => {
+                return (
+                  <div className="info--recipe--instructions">
+                    <li key={step.number}>{step.step}</li>
+                  </div>
+                );
+              })}
+            </ol>
           </div>
         </div>
       ) : (
