@@ -2,6 +2,13 @@
   width: 100%;
   max-width: 1200px;
   margin: 4rem auto;
+  background-color: #a5dda8;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+.card--receipes--container a {
+  text-decoration: none;
 }
 
 .card--receipes {
@@ -27,5 +34,5 @@
   font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
-  color: rgb(20, 131, 20);
+  color: rgb(86, 149, 86);
 }

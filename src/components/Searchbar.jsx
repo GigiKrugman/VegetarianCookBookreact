@@ -21,6 +21,7 @@ export default function SearchBar() {
       <input
         onChange={(e) => setInput(e.target.value)}
         type="text"
+        placeholder="Search Recipe"
         className="input--search-bar"
         value={input}
       />

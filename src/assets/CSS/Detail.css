@@ -1,0 +1,113 @@
+/* General styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #4caf50;
+  line-height: 1.6;
+}
+
+h2,
+h3,
+h4 {
+  margin-bottom: 15px;
+  color: white;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+  color: white;
+  font-size: medium;
+  font-weight: 600;
+}
+
+.back-to-homepage {
+  display: inline-block;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.back-to-homepage:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Card styles */
+.detail--card-title {
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  border-radius: 7px;
+}
+
+.card--image--info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.detail--card-image {
+  width: 50%;
+  border-radius: 6%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px 15px;
+}
+
+.detail--card--favicons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 45%;
+}
+
+.detail--card--favicons p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.detail--card--favicons span {
+  color: white;
+  font-size: medium;
+  font-weight: 600;
+}
+
+.info--recipe--container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.info--ingredients--container,
+.info--instructions--container {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 5px;
+  /* margin-bottom: 20px; */
+}
+
+.info--recipe--ingredients,
+.info--recipe--instructions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info--recipe--ingredients p,
+.info--recipe--instructions li {
+  margin: 0;
+}
