@@ -46,16 +46,18 @@ export default function DetailedRecipe() {
               className="detail--card-image"
             />
             <div className="detail--card--favicons">
-              <IoIosTimer />
-              <p>
+              <p className="recipe-info">
+                <IoIosTimer />
                 <span>Preparation time</span>: {details.readyInMinutes} minutes
               </p>
-              <BiLeaf />
-              <p>
+
+              <p className="recipe-info">
+                <BiLeaf />
                 <span>Vegetarian</span>
               </p>
-              <FaNutritionix />
-              <p>
+
+              <p className="recipe-info">
+                <FaNutritionix />
                 <span>Nutrition Score</span>: {details.healthScore} / 10
               </p>
             </div>
@@ -70,8 +72,11 @@ export default function DetailedRecipe() {
               <ul>
                 {details.extendedIngredients.map((ingredient) => {
                   return (
-                    <div className="info--recipe--ingredients">
-                      <li key={ingredient.id}>
+                    <div>
+                      <li
+                        key={ingredient.id}
+                        className="info--recipe--ingredients"
+                      >
                         <p>{ingredient.name}</p>
                       </li>
                     </div>
@@ -84,8 +89,13 @@ export default function DetailedRecipe() {
               <ol>
                 {details.analyzedInstructions[0].steps.map((step) => {
                   return (
-                    <div className="info--recipe--instructions">
-                      <li key={step.number}>{step.step}</li>
+                    <div>
+                      <li
+                        key={step.number}
+                        className="info--recipe--instructions"
+                      >
+                        {step.step}
+                      </li>
                     </div>
                   );
                 })}

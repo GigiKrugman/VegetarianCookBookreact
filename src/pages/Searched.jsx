@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { MdKeyboardBackspace } from "react-icons/md";
 
 export default function Searched() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
@@ -21,17 +22,26 @@ export default function Searched() {
   }, [params.searched]);
 
   return (
-    <div className="searched--recipe-card">
-      {searchedRecipes.map((item) => {
-        return (
-          <Link to={"/recipe/" + item.id} key={item.id}>
-            <div className="single--recipe--searched-card">
-              <img src={item.image} />
-              <h3>{item.title}</h3>
-            </div>
-          </Link>
-        );
-      })}
+    <div>
+      <Link to="/">
+        <MdKeyboardBackspace className="back-to-homepage" />
+      </Link>
+      <div className="searched--recipe-card">
+        {searchedRecipes.map((item) => {
+          return (
+            <Link
+              to={"/recipe/" + item.id}
+              key={item.id}
+              className="recipe-link--router"
+            >
+              <div className="single--recipe--searched-card">
+                <img src={item.image} />
+                <h3>{item.title}</h3>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }
