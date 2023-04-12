@@ -1,9 +1,8 @@
 /* General styles */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 body {
   font-family: "Arial", sans-serif;
-  background-image: linear-gradient(to right, #81c784, #4caf50, #388e3c);
+  /* background-image: linear-gradient(to right, #81c784, #4caf50, #388e3c); */
 
   line-height: 1.6;
 }
@@ -12,7 +11,7 @@ h2,
 h3,
 h4 {
   margin-bottom: 15px;
-  color: white;
+  color: rgb(21, 101, 54);
 }
 
 img {
@@ -24,15 +23,15 @@ ul,
 ol {
   padding: 0;
   list-style: none;
-  color: white;
-  font-size: medium;
+  color: rgb(60, 162, 123);
+  font-size: 25px;
   font-weight: 600;
 }
 
 .back-to-homepage {
   display: inline-block;
-  font-size: 2rem;
-  color: white;
+  font-size: 3rem;
+  color: rgb(26, 140, 35);
   text-decoration: none;
   margin-bottom: 20px;
   padding: 5px 10px;
@@ -41,7 +40,9 @@ ol {
 }
 
 .back-to-homepage:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(10, 150, 10);
+  border: 4px solid rgb(28, 133, 28);
+  color: white;
 }
 
 /* Card styles */
@@ -62,7 +63,7 @@ ol {
 
 .detail--card-image {
   width: 50%;
-  border-radius: 6%;
+  border-radius: 4%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 5px 15px;
 }
@@ -77,6 +78,9 @@ ol {
 /* .detail--card--favicons p {
 
 } */
+.info--recipe--summary {
+  font-size: 25px;
+}
 
 .recipe-info {
   display: flex;
@@ -84,16 +88,16 @@ ol {
   gap: 5px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 20px;
-  color: #edeeed;
+  font-size: 30px;
+  color: #55ab55;
   margin: 0;
   gap: 14px;
   line-height: 45px;
 }
 
 .detail--card--favicons span {
-  color: white;
-  font-size: medium;
+  color: rgb(21, 108, 25);
+  font-size: 30px;
   font-weight: 600;
 }
 
@@ -104,6 +108,11 @@ ol {
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+}
+
+.info--instructions--container,
+.info--ingredients--container h4 {
+  font-size: 30px;
 }
 
 .info--ingredients--container,
@@ -122,7 +131,7 @@ ol {
 .info--recipe--instructions::before {
   content: "•";
   font-size: bold;
-  color: white;
+  color: rgb(59, 144, 38);
   position: absolute;
   margin-left: -15px;
 }

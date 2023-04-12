@@ -34,7 +34,7 @@ export default function PopularVegetarians() {
   }, []);
 
   return (
-    <div>
+    <div className="popular--section">
       <div className="card--receipes--container">
         <h3>Popular Vegetarian Picks:</h3>
         <Splide

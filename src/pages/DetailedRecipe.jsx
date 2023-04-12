@@ -5,6 +5,7 @@ import { IoIosTimer } from "react-icons/io";
 import { BiLeaf } from "react-icons/bi";
 import { FaNutritionix } from "react-icons/fa";
 import { MdKeyboardBackspace } from "react-icons/md";
+import Loading from "../components/Loading";
 
 //function helpful tp clear all the HTML rendered!
 function stripHTMLTags(text) {
@@ -58,7 +59,7 @@ export default function DetailedRecipe() {
 
               <p className="recipe-info">
                 <FaNutritionix />
-                <span>Nutrition Score</span>: {details.healthScore} / 10
+                <span>Nutrition Score</span>: {details.healthScore} points
               </p>
             </div>
           </div>
@@ -77,7 +78,11 @@ export default function DetailedRecipe() {
                         key={ingredient.id}
                         className="info--recipe--ingredients"
                       >
-                        <p>{ingredient.name}</p>
+                        <p>
+                          {ingredient.name} -
+                          {Math.round(ingredient.measures.metric.amount)}
+                          {ingredient.measures.metric.unitShort}
+                        </p>
                       </li>
                     </div>
                   );
@@ -104,7 +109,7 @@ export default function DetailedRecipe() {
           </div>
         </div>
       ) : (
-        <p>Loading...</p>
+        <Loading />
       )}
     </div>
   );

@@ -7,6 +7,7 @@ import "./assets/CSS/Searched.css";
 import "./assets/CSS/Navbar.css";
 import "./assets/CSS/Detail.css";
 import "./assets/CSS/SearchBar.css";
+import "./assets/CSS/Home.css";
 
 //import { BrowserRouter } from "react-router-dom";
 

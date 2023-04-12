@@ -1,0 +1,6 @@
+.loading--phase {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 150px;
+}

@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 4rem auto;
-  background-color: #a5dda8;
+
   padding: 15px 20px;
   border-radius: 5px;
 }
@@ -11,13 +11,18 @@
   text-decoration: none;
 }
 
+.card--receipes--container h3 {
+  font-size: 30px;
+  font-weight: 800;
+}
+
 .card--receipes {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  background-color: #fff;
+
   border-radius: 0.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -31,7 +36,7 @@
 
 .card--receipes h4 {
   margin-top: 1rem;
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 600;
   text-align: center;
   color: rgb(86, 149, 86);

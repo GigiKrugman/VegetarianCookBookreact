@@ -8,7 +8,7 @@
 
 .single--recipe--searched-card {
   border-radius: 8px;
-  border: 3px solid #4caf50;
+  /* border: 3px solid #4caf50; */
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -32,8 +32,9 @@
 }
 
 .single--recipe--searched-card h3 {
-  color: white;
-  font-size: 1.2rem;
+  color: rgb(86, 149, 86);
+  font-size: 1.3rem;
+  font-weight: 600;
   margin: 10px 0;
   text-align: center;
   padding: 0 10px;
