@@ -3,23 +3,45 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { MdKeyboardBackspace } from "react-icons/md";
+import Error from "../pages/Error";
 
 export default function Searched() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
+  const [hasError, setHasError] = useState(false);
   let params = useParams();
-  const apiKey = "d04c0ad217af403d8a6bd4fb1b8dc0f5";
+  const apiKey = import.meta.env.VITE_API_KEY_SPOONACULAR;
   const recipeSearched = async (name) => {
-    const data = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${name}&diet=vegetarian`
-    );
-    const recipes = await data.json();
+    try {
+      const response = await fetch(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${name}&diet=vegetarian`
+      );
 
-    setSearchedRecipes(recipes.results);
+      if (!response.ok) {
+        throw new Error(`HTTP error ${response.status}`);
+      }
+
+      const recipes = await response.json();
+      setSearchedRecipes(recipes.results);
+
+      if (recipes.results.length === 0) {
+        setHasError(true);
+      } else {
+        setHasError(false);
+      }
+    } catch (error) {
+      setHasError(true);
+    } finally {
+      console.log("Fetch operation completed");
+    }
   };
 
   useEffect(() => {
     recipeSearched(params.searched);
   }, [params.searched]);
+
+  if (hasError) {
+    return <Error />;
+  }
 
   return (
     <div>

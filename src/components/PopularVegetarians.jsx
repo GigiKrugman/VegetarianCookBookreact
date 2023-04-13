@@ -4,6 +4,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Link } from "react-router-dom";
 import DetailedRecipe from "../pages/DetailedRecipe";
+import Error from "../pages/Error";
 
 export default function PopularVegetarians() {
   const [popular, setPopular] = useState([]);
@@ -18,7 +19,7 @@ export default function PopularVegetarians() {
               Accept: "application/json",
             },
             params: {
-              apiKey: "d04c0ad217af403d8a6bd4fb1b8dc0f5",
+              apiKey: import.meta.env.VITE_API_KEY_SPOONACULAR,
               tags: "vegetarian",
               number: 6,
             },
@@ -27,7 +28,7 @@ export default function PopularVegetarians() {
         console.log(res.data);
         setPopular(res.data.recipes);
       } catch (error) {
-        console.log(error);
+        <Error />;
       }
     };
     fetchData();
