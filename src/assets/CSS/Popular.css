@@ -67,25 +67,30 @@
   .card--receipes--container {
     width: 100%;
     padding: 15px 0;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr;
     grid-gap: 1rem;
   }
 
   .card--receipes h4 {
     font-size: 1.2rem;
+    margin-top: 1rem;
   }
 }
 
 @media screen and (max-width: 320px) {
   .card--receipes--container {
-    width: 100%;
+    width: fit-content;
     padding: 15px 0;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: 1fr;
     grid-gap: 1rem;
   }
 
+  .popular--section h3 {
+    width: 60%;
+  }
+
   .card--receipes {
-    width: 100%;
+    width: 60%;
     box-sizing: border-box;
   }
 

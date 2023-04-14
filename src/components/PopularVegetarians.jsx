@@ -38,15 +38,6 @@ export default function PopularVegetarians() {
     <div className="popular--section">
       <h3>Popular Vegetarian Picks:</h3>
       <div className="card--receipes--container">
-        {/* <Splide
-          options={{
-            perPage: 3,
-            arrows: true,
-            pagination: false,
-            drag: "free",
-            gap: "15px",
-          }}
-        > */}
         {popular.map((recipe) => {
           return (
             <div key={recipe.id} className="card--container--popular">
@@ -59,7 +50,6 @@ export default function PopularVegetarians() {
             </div>
           );
         })}
-        {/* </Splide> */}
       </div>
     </div>
   );
