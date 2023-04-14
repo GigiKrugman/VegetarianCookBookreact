@@ -36,9 +36,9 @@ export default function PopularVegetarians() {
 
   return (
     <div className="popular--section">
+      <h3>Popular Vegetarian Picks:</h3>
       <div className="card--receipes--container">
-        <h3>Popular Vegetarian Picks:</h3>
-        <Splide
+        {/* <Splide
           options={{
             perPage: 3,
             arrows: true,
@@ -46,20 +46,20 @@ export default function PopularVegetarians() {
             drag: "free",
             gap: "15px",
           }}
-        >
-          {popular.map((recipe) => {
-            return (
-              <SplideSlide key={recipe.id}>
-                <Link to={"/recipe/" + recipe.id}>
-                  <div className="card--receipes">
-                    <img src={recipe.image} alt={recipe.title} />
-                    <h4>{recipe.title}</h4>
-                  </div>
-                </Link>
-              </SplideSlide>
-            );
-          })}
-        </Splide>
+        > */}
+        {popular.map((recipe) => {
+          return (
+            <div key={recipe.id} className="card--container--popular">
+              <Link to={"/recipe/" + recipe.id}>
+                <div className="card--receipes">
+                  <img src={recipe.image} alt={recipe.title} />
+                  <h4>{recipe.title}</h4>
+                </div>
+              </Link>
+            </div>
+          );
+        })}
+        {/* </Splide> */}
       </div>
     </div>
   );

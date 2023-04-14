@@ -2,8 +2,8 @@
   margin-top: 30px;
   position: relative;
   width: 100%;
-  max-width: 600px; /* Set a max width for the search bar */
-  display: flex; /* Use flexbox to align the input and lens */
+  max-width: 600px;
+  display: flex;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
@@ -15,12 +15,12 @@
   font-size: 1.5rem;
   font-weight: 500;
   color: rgb(30, 85, 12);
-  padding: 1rem 2rem 1rem 4rem; /* Adjust the left and right padding */
+  padding: 1rem 2rem 1rem 4rem;
   border: 5px solid rgb(15, 101, 15);
   border-radius: 1rem;
   outline: none;
   width: 100%;
-  max-width: 100%; /* Make the input fill the available space */
+  max-width: 100%;
 }
 
 .search--lens {
@@ -29,4 +29,27 @@
   left: 1rem;
   transform: translateY(-50%);
   color: rgb(21, 152, 21);
+}
+
+@media screen and (min-width: 1024px) {
+  .input--search-bar {
+    font-size: 1.5rem;
+    padding: 1rem 2rem 1rem 4rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .input--search-bar {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem 0.8rem 3rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .input--search-bar {
+    font-size: 1rem;
+    padding: 0.6rem 1rem 0.6rem 2.5rem;
+    width: 50%;
+    position: center;
+  }
 }

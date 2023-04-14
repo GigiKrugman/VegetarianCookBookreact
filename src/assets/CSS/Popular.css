@@ -2,7 +2,9 @@
   width: 100%;
   max-width: 1200px;
   margin: 4rem auto;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
   padding: 15px 20px;
   border-radius: 5px;
 }
@@ -11,7 +13,8 @@
   text-decoration: none;
 }
 
-.card--receipes--container h3 {
+.popular--section h3 {
+  margin-top: 50px;
   font-size: 30px;
   font-weight: 800;
 }
@@ -46,44 +49,52 @@
   .card--receipes--container {
     width: 90%;
   }
-  .card--receipes {
-    width: 80%;
-    margin-bottom: 20px;
-  }
 }
 
-/* For tablets */
 @media screen and (max-width: 768px) {
   .card--receipes--container {
-    width: 80%;
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
   }
 
   .card--receipes h4 {
-    font-size: 1rem;
-    width: 50%;
+    font-size: 1.5rem;
   }
 }
 
-/* For smartphones - landscape */
 @media screen and (max-width: 480px) {
   .card--receipes--container {
-    width: 90%;
+    width: 100%;
+    padding: 15px 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
   }
 
   .card--receipes h4 {
-    font-size: 1rem;
-    width: 60%;
+    font-size: 1.2rem;
   }
 }
 
-/* For smartphones - portrait */
 @media screen and (max-width: 320px) {
   .card--receipes--container {
-    width: 85%;
+    width: 100%;
+    padding: 15px 0;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 1rem;
+  }
+
+  .card--receipes {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .card--receipes img {
+    border-radius: 0.25rem 0.25rem 0 0;
   }
 
   .card--receipes h4 {
     font-size: 0.9rem;
-    width: 60%;
+    margin-top: 0.5rem;
   }
 }
