@@ -3,34 +3,35 @@ import axios from "axios";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Link } from "react-router-dom";
-import DetailedRecipe from "../pages/DetailedRecipe";
-import Error from "../pages/Error";
+import DetailedRecipe from "../../pages/DetailedRecipe/DetailedRecipe";
+import Error from "../../pages/ErrorComponent/Error";
 
 export default function PopularVegetarians() {
   const [popular, setPopular] = useState([]);
 
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(
+        "https://api.spoonacular.com/recipes/random",
+        {
+          headers: {
+            Accept: "application/json",
+          },
+          params: {
+            apiKey: import.meta.env.VITE_API_KEY_SPOONACULAR,
+            tags: "vegetarian",
+            number: 6,
+          },
+        }
+      );
+      console.log(res.data);
+      setPopular(res.data.recipes);
+    } catch (error) {
+      <Error />;
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get(
-          "https://api.spoonacular.com/recipes/random",
-          {
-            headers: {
-              Accept: "application/json",
-            },
-            params: {
-              apiKey: import.meta.env.VITE_API_KEY_SPOONACULAR,
-              tags: "vegetarian",
-              number: 6,
-            },
-          }
-        );
-        console.log(res.data);
-        setPopular(res.data.recipes);
-      } catch (error) {
-        <Error />;
-      }
-    };
     fetchData();
   }, []);
 

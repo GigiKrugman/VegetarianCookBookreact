@@ -5,7 +5,7 @@ import { IoIosTimer } from "react-icons/io";
 import { BiLeaf } from "react-icons/bi";
 import { FaNutritionix } from "react-icons/fa";
 import { MdKeyboardBackspace } from "react-icons/md";
-import Loading from "../components/Loading";
+import Loading from "../../components/Loading/Loading";
 
 //function helpful tp clear all the HTML rendered!
 function stripHTMLTags(text) {

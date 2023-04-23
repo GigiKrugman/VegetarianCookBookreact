@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { MdKeyboardBackspace } from "react-icons/md";
-import Error from "../pages/Error";
+import Error from "./ErrorComponent/Error";
+import Loading from "../components/Loading/Loading";
 
 export default function Searched() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);
@@ -48,22 +49,26 @@ export default function Searched() {
       <Link to="/">
         <MdKeyboardBackspace className="back-to-homepage" />
       </Link>
-      <div className="searched--recipe-card">
-        {searchedRecipes.map((item) => {
-          return (
-            <Link
-              to={"/recipe/" + item.id}
-              key={item.id}
-              className="recipe-link--router"
-            >
-              <div className="single--recipe--searched-card">
-                <img src={item.image} />
-                <h3>{item.title}</h3>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+      {searchedRecipes ? (
+        <div className="searched--recipe-card">
+          {searchedRecipes.map((item) => {
+            return (
+              <Link
+                to={"/recipe/" + item.id}
+                key={item.id}
+                className="recipe-link--router"
+              >
+                <div className="single--recipe--searched-card">
+                  <img src={item.image} alt={item.title} />
+                  <h3>{item.title}</h3>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }

@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
-import "./assets/CSS/Popular.css";
+import "../src/components/PopularVegetarian/Popular.css";
 import "./assets/CSS/Searched.css";
-import "./assets/CSS/Navbar.css";
-import "./assets/CSS/Detail.css";
-import "./assets/CSS/SearchBar.css";
-import "./assets/CSS/Loading.css";
-import "./assets/CSS/Error.css";
+
+import "../src/pages/DetailedRecipe/Detail.css";
+import "../src/components/SearchBar/SearchBar.css";
+import "../src/components/Loading/Loading.css";
+import "../src/pages/ErrorComponent/Error.css";
 
 //import { BrowserRouter } from "react-router-dom";
 

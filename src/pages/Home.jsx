@@ -1,6 +1,6 @@
 import React from "react";
 
-import PopularVegetarians from "../components/PopularVegetarians";
+import PopularVegetarians from "../components/PopularVegetarian/PopularVegetarians";
 
 export default function Home() {
   return (

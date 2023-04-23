@@ -1,5 +1,5 @@
 import React from "react";
-import IMG from "../assets/Images/cooking-recipes.png";
+import IMG from "../../assets/Images/cooking-recipes.png";
 
 export default function Loading() {
   return (

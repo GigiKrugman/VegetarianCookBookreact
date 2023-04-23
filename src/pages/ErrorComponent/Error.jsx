@@ -1,5 +1,5 @@
 import React from "react";
-import ErrorImg from "../assets/Images/ErrorCB.png";
+import ErrorImg from "../../assets/Images/ErrorCB.png";
 import { MdKeyboardBackspace } from "react-icons/md";
 import { Link } from "react-router-dom";
 
