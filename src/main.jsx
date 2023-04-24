@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
 import "../src/components/PopularVegetarian/Popular.css";
-import "./assets/CSS/Searched.css";
+import "../src/pages/SearchedComponent/Searched.css";
 
 import "../src/pages/DetailedRecipe/Detail.css";
 import "../src/components/SearchBar/SearchBar.css";

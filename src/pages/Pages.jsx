@@ -1,7 +1,7 @@
 import React from "react";
 
 import Home from "./Home";
-import Searched from "./Searched";
+import Searched from "./SearchedComponent/Searched";
 import DetailedRecipe from "./DetailedRecipe/DetailedRecipe";
 import { Route, Routes } from "react-router-dom";
 

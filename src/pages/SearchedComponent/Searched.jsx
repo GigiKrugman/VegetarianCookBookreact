@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { MdKeyboardBackspace } from "react-icons/md";
-import ClientApi from "../components/Api/ClientApi";
-import Error from "./ErrorComponent/Error";
-import Loading from "../components/Loading/Loading";
+import ClientApi from "../../components/Api/ClientApi";
+import Error from "../ErrorComponent/Error";
+import Loading from "../../components/Loading/Loading";
 
 export default function Searched() {
   const [searchedRecipes, setSearchedRecipes] = useState([]);

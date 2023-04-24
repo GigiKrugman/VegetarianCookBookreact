@@ -25,9 +25,14 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
-
   border-radius: 0.5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card--receipes:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
 .card--receipes img {
