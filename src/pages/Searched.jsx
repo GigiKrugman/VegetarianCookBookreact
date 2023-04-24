@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { MdKeyboardBackspace } from "react-icons/md";
+import ClientApi from "../components/Api/ClientApi";
 import Error from "./ErrorComponent/Error";
 import Loading from "../components/Loading/Loading";
 
@@ -13,15 +14,7 @@ export default function Searched() {
   const apiKey = import.meta.env.VITE_API_KEY_SPOONACULAR;
   const recipeSearched = async (name) => {
     try {
-      const response = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${name}&diet=vegetarian`
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP error ${response.status}`);
-      }
-
-      const recipes = await response.json();
+      const recipes = await ClientApi.searchRecipes(name); // Use ClientApi method
       setSearchedRecipes(recipes.results);
 
       if (recipes.results.length === 0) {
